@@ -20,7 +20,7 @@ RSS_FEEDS = [
     },
     {
         "source": "PCI Magazine",
-        "url": "https://www.pcimag.com/rss"
+        "url": "https://www.pcimag.com/rss/articles"
     },
     {
         "source": "European Coatings",
@@ -55,10 +55,27 @@ def translate_text(text):
 def main():
     all_news = []
     
+    # 建立一個更完整的偽裝 Header，模擬真實瀏覽器的所有行為特徵
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "Accept-Language": "en-US,en;q=0.9,zh-TW;q=0.8,zh;q=0.7",
+        "Referer": "https://www.google.com/"
+    }
+    
     for feed_info in RSS_FEEDS:
         print(f"\n正在抓取來源: {feed_info['source']}")
         try:
-            feed = feedparser.parse(feed_info['url'])
+            # 先用 requests 帶上偽裝標頭去抓取網頁內容
+            res = requests.get(feed_info['url'], headers=headers, timeout=15)
+            
+            # 檢查是否被伺服器阻擋 (例如 403 Forbidden 錯誤)
+            if res.status_code != 200:
+                print(f"⚠️ 伺服器拒絕連線: {feed_info['source']} 回傳狀態碼 {res.status_code}，可能被高級防火牆阻擋。")
+                continue
+            
+            # 將抓下來的內容交給 feedparser 解析
+            feed = feedparser.parse(res.content)
             
             # 如果抓不到資料 (可能網址失效或阻擋)，印出警告並跳過
             if not feed.entries:
