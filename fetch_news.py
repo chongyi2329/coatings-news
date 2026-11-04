@@ -20,7 +20,7 @@ RSS_FEEDS = [
     },
     {
         "source": "PCI Magazine",
-        "url": "https://www.pcimag.com/rss/articles"
+        "url": "https://news.google.com/rss/search?q=site:pcimag.com&hl=en-US&gl=US&ceid=US:en"
     },
     {
         "source": "European Coatings",
