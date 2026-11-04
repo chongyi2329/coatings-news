@@ -36,6 +36,20 @@
     },
     {
         "source": "Coatings World",
+        "title": "日本船舶塗料市場",
+        "summary": "日本船舶塗料生產商正大力投資提升產能，以應對未來幾年預計將出現的巨大需求。\n\n本文《日本船舶塗料市場》首發於 Coatings World 網站。",
+        "url": "https://www.coatingsworld.com/the-marine-coating-market-in-japan/",
+        "publishedAt": "Tue, 03 Nov 2026 21:34:42 +0000"
+    },
+    {
+        "source": "Coatings World",
+        "title": "埃及再生能源投資將如何影響國內塗料市場",
+        "summary": "風能和太陽能項目，以及埃及2024年氫能戰略的實施，預計將刺激對現代塗料解決方案的需求。\n\n本文《埃及再生能源投資將如何影響國內塗料市場》原刊於《塗料世界》網站。",
+        "url": "https://www.coatingsworld.com/how-egypts-renewable-energy-investment-may-impact-domestic-paints-and-coatings-market/",
+        "publishedAt": "Tue, 03 Nov 2026 21:20:06 +0000"
+    },
+    {
+        "source": "Coatings World",
         "title": "披薩引發併購熱潮！義大利經濟成長刺激併購活動",
         "summary": "Berlac 和 RPM International 等公司宣布了新的收購計劃。\n\n本文《披薩引發併購熱潮！義大利經濟成長刺激併購活動》原刊於 Coatings World 網站。",
         "url": "https://www.coatingsworld.com/a-pizza-the-action-italian-growth-stimulates-ma-interest/",
@@ -56,18 +70,39 @@
         "publishedAt": "Mon, 31 Aug 2026 14:20:36 +0000"
     },
     {
-        "source": "Coatings World",
-        "title": "船舶塗料市場發展勢頭強勁",
-        "summary": "船舶效率和脫碳是船舶塗料行業領導者關注的重要趨勢。\n\n本文《船舶塗料市場發展勢頭強勁》首發於 Coatings World 網站。",
-        "url": "https://www.coatingsworld.com/the-marine-coatings-market-picks-up-steam/",
-        "publishedAt": "Mon, 31 Aug 2026 10:36:00 +0000"
+        "source": "PCI Magazine",
+        "title": "選舉日後塗料產業面臨的政策抉擇",
+        "summary": "隨著選民今天前往投票站，PCI 探討了影響塗料配方、原料取得、製造投資和需求的政策抉擇。",
+        "url": "https://www.pcimag.com/articles/115505-the-policy-decisions-facing-coatings-after-election-day",
+        "publishedAt": "Tue, 03 Nov 2026 12:33:01 -0500"
     },
     {
-        "source": "Coatings World",
-        "title": "亞太地區塗料產業",
-        "summary": "除中東以外，亞洲受霍爾木茲海峽關閉的影響最大，尤其是東南亞、南亞、日本和韓國。\n\n本文《亞太塗料產業》首發於 Coatings World 網站。",
-        "url": "https://www.coatingsworld.com/the-asia-pacific-paint-coatings-industry/",
-        "publishedAt": "Mon, 31 Aug 2026 05:18:00 +0000"
+        "source": "PCI Magazine",
+        "title": "播客 | ChemQuest 領導層交接內幕",
+        "summary": "值此 ChemQuest 成立 50 週年之際，新任執行長和長期領導人探討了繼任計畫、全球成長以及客戶需求的變化。",
+        "url": "https://www.pcimag.com/articles/115504-podcast-inside-chemquests-leadership-handoff",
+        "publishedAt": "Tue, 03 Nov 2026 00:00:00 -0500"
+    },
+    {
+        "source": "PCI Magazine",
+        "title": "阿克蘇諾貝爾發布年度汽車色彩",
+        "summary": "全新系列探索了汽車、電子和航空航天內飾應用中令人平靜的中性色、富有表現力的飾面以及不斷變化的色彩偏好。",
+        "url": "https://www.pcimag.com/articles/115482-akzonobel-announces-automotive-color-of-the-year",
+        "publishedAt": "Tue, 03 Nov 2026 00:00:00 -0500"
+    },
+    {
+        "source": "PCI Magazine",
+        "title": "Oxea 上調兩大化學品組合的價格",
+        "summary": "新的調整影響醇類、乙酸鹽、酸類和特種酯類，存在區域差異，並對塗料配方中使用的幾種材料產生影響。",
+        "url": "https://www.pcimag.com/articles/115472-oxea-raises-prices-across-two-chemical-portfolios",
+        "publishedAt": "Tue, 03 Nov 2026 00:00:00 -0500"
+    },
+    {
+        "source": "PCI Magazine",
+        "title": "JIT Industries 收購阿拉巴馬州硬鉻電鍍廠",
+        "summary": "此次收購增加了工業硬鉻電鍍和表面修復能力，可處理長度達 23 英尺的零件。",
+        "url": "https://www.pcimag.com/articles/115468-jit-industries-acquires-alabama-hard-chrome-plating-facility",
+        "publishedAt": "Tue, 03 Nov 2026 00:00:00 -0500"
     },
     {
         "source": "European Coatings",
