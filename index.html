@@ -3,206 +3,203 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>全球塗料產業新聞儀表板</title>
+    <title>全球塗料產業動態 - The Coatings Post</title>
     
-    <!-- 引入 Tailwind CSS 進行快速且美觀的樣式設計 -->
+    <!-- 引入 Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        // 設定 Tailwind 支援 class 模式的深色主題
         tailwind.config = {
             darkMode: 'class',
             theme: {
                 extend: {
                     fontFamily: {
                         sans: ['Inter', 'system-ui', 'sans-serif'],
+                        // 引入襯線字體，增加雜誌質感
+                        serif: ['"Noto Serif TC"', 'serif'],
+                    },
+                    colors: {
+                        magazine: {
+                            bg: '#faf9f6',
+                            darkbg: '#1a1a1a',
+                            accent: '#b91c1c', // 雜誌紅
+                        }
                     }
                 }
             }
         }
     </script>
 
-    <!-- 引入 Phosphor Icons 作為圖示 -->
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
-
+    <!-- 引入字體與圖示 -->
     <style>
-        /* 簡單的過渡動畫，讓切換深色模式時比較柔和 */
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;900&display=swap');
         body {
             transition: background-color 0.3s ease, color 0.3s ease;
         }
     </style>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
-<body class="bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 min-h-screen">
+<body class="bg-magazine-bg text-gray-900 dark:bg-magazine-darkbg dark:text-gray-100 min-h-screen">
 
-    <!-- 頂部導覽列 -->
-    <header class="sticky top-0 z-10 bg-white/80 dark:bg-gray-800/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-700 shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center gap-2">
-                    <i class="ph-fill ph-paint-brush-broad text-2xl text-blue-600 dark:text-blue-400"></i>
-                    <h1 class="text-xl font-bold tracking-tight">Paint & Coatings News</h1>
-                </div>
-                <div class="flex items-center gap-4">
-                    <button id="refresh-btn" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors" title="重新整理">
-                        <i class="ph ph-arrows-clockwise text-xl"></i>
-                    </button>
-                    <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors" title="切換深色/淺色模式">
-                        <i id="theme-icon" class="ph ph-moon text-xl"></i>
-                    </button>
-                </div>
+    <!-- 頂部小工具列 -->
+    <div class="border-b border-gray-200 dark:border-gray-800">
+        <div class="max-w-6xl mx-auto px-4 md:px-8 py-2 flex justify-between items-center text-xs text-gray-500 dark:text-gray-400">
+            <div>
+                <span id="current-date"></span>
             </div>
+            <div class="flex gap-4">
+                <button id="refresh-btn" class="hover:text-black dark:hover:text-white transition-colors flex items-center gap-1">
+                    <i class="ph ph-arrows-clockwise text-sm"></i> 重新整理
+                </button>
+                <button id="theme-toggle" class="hover:text-black dark:hover:text-white transition-colors flex items-center gap-1">
+                    <i id="theme-icon" class="ph ph-moon text-sm"></i> <span id="theme-text">深色模式</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 雜誌標題 Header -->
+    <header class="border-b-2 border-black dark:border-gray-600 py-6 px-4 md:px-8 max-w-6xl mx-auto flex justify-between items-center">
+        <h1 class="text-3xl md:text-5xl font-serif font-black tracking-tight">The Coatings Post</h1>
+        <div class="text-right hidden md:block">
+            <p class="text-sm font-bold uppercase tracking-widest text-magazine-accent">Daily Digest</p>
+            <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Global Industry News</p>
         </div>
     </header>
 
-    <!-- 主要內容區：新聞列表 -->
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <!-- 主要內容區 -->
+    <main class="max-w-6xl mx-auto px-4 md:px-8 py-10">
         
-        <!-- 狀態顯示 (載入中/無資料) -->
-        <div id="status-message" class="text-center py-10 text-gray-500 dark:text-gray-400 hidden">
-            <i class="ph ph-spinner animate-spin text-3xl mb-2"></i>
-            <p>正在載入最新資訊...</p>
+        <!-- 狀態顯示 -->
+        <div id="status-message" class="text-center py-20 text-gray-500 dark:text-gray-400">
+            <i class="ph ph-spinner animate-spin text-4xl mb-4"></i>
+            <p class="font-serif text-lg">正在載入最新產業動態...</p>
         </div>
 
-        <!-- 新聞卡片網格 -->
-        <div id="news-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- 卡片會由 JavaScript 動態產生並安插在這裡 -->
+        <!-- 雜誌網格佈局 (由 JS 填入內容) -->
+        <div id="news-container" class="grid grid-cols-1 md:grid-cols-12 gap-10 hidden">
+            <!-- 內容動態產生 -->
         </div>
 
     </main>
 
-    <!-- JavaScript 邏輯 -->
+    <footer class="border-t border-gray-200 dark:border-gray-800 py-8 mt-10 text-center text-sm text-gray-500 font-serif">
+        <p>© <script>document.write(new Date().getFullYear())</script> The Coatings Post. Automated via GitHub Actions.</p>
+    </footer>
+
     <script>
-        // --- 1. 深色模式切換邏輯 ---
+        // --- 1. 日期顯示 ---
+        const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        document.getElementById('current-date').textContent = new Date().toLocaleDateString('zh-TW', dateOptions);
+
+        // --- 2. 深色模式切換邏輯 ---
         const themeToggleBtn = document.getElementById('theme-toggle');
         const themeIcon = document.getElementById('theme-icon');
+        const themeText = document.getElementById('theme-text');
         const htmlElement = document.documentElement;
 
-        // 檢查本地儲存的使用者偏好
+        function updateThemeUI(isDark) {
+            if (isDark) {
+                htmlElement.classList.add('dark');
+                themeIcon.classList.replace('ph-moon', 'ph-sun');
+                themeText.textContent = "淺色模式";
+            } else {
+                htmlElement.classList.remove('dark');
+                themeIcon.classList.replace('ph-sun', 'ph-moon');
+                themeText.textContent = "深色模式";
+            }
+        }
+
         if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            htmlElement.classList.add('dark');
-            themeIcon.classList.replace('ph-moon', 'ph-sun');
-        } else {
-            htmlElement.classList.remove('dark');
+            updateThemeUI(true);
         }
 
         themeToggleBtn.addEventListener('click', function() {
-            if (htmlElement.classList.contains('dark')) {
-                htmlElement.classList.remove('dark');
-                localStorage.setItem('color-theme', 'light');
-                themeIcon.classList.replace('ph-sun', 'ph-moon');
-            } else {
-                htmlElement.classList.add('dark');
-                localStorage.setItem('color-theme', 'dark');
-                themeIcon.classList.replace('ph-moon', 'ph-sun');
-            }
+            const isDark = htmlElement.classList.contains('dark');
+            updateThemeUI(!isDark);
+            localStorage.setItem('color-theme', !isDark ? 'dark' : 'light');
         });
 
-        // --- 2. 新聞資料載入與渲染邏輯 ---
-        const newsGrid = document.getElementById('news-grid');
+        // --- 3. 新聞資料載入與渲染邏輯 ---
+        const newsContainer = document.getElementById('news-container');
         const statusMessage = document.getElementById('status-message');
         const refreshBtn = document.getElementById('refresh-btn');
 
-        // 假資料 (Mock Data) - 為了讓你現在就能看到排版效果
-        const mockNews = [
-            {
-                source: "Coatings World",
-                title: "AkzoNobel 宣布全新永續水性塗料技術",
-                summary: "阿克蘇諾貝爾今日發表了最新一代的環保塗料，預計將為建築產業減少高達 30% 的碳足跡，並提升乾燥效率。",
-                url: "#",
-                publishedAt: "2 小時前"
-            },
-            {
-                source: "Google News",
-                title: "2026年全球工業塗料市場預估突破新高",
-                summary: "根據最新市場研究報告，受惠於亞太地區製造業與電動車市場的快速擴張，防腐蝕塗料需求持續強勁上揚...",
-                url: "#",
-                publishedAt: "4 小時前"
-            },
-            {
-                source: "PCI Magazine",
-                title: "Sherwin-Williams 完成對歐洲特用化學品公司的收購",
-                summary: "宣偉公司 (Sherwin-Williams) 正式宣布完成價值 5 億美元的戰略收購案，此舉將大幅強化其在歐洲粉末塗料市場的市占率。",
-                url: "#",
-                publishedAt: "昨天"
-            },
-            {
-                source: "European Coatings",
-                title: "新型生物基樹脂如何改變包裝塗料",
-                summary: "研究人員開發出一種由植物廢料提取的新型樹脂，在食品金屬罐內部塗層測試中展現出替代傳統雙酚A (BPA) 的巨大潛力。",
-                url: "#",
-                publishedAt: "2026-11-01"
-            }
-        ];
-
-        // 渲染卡片的函數
         function renderNews(newsData) {
-            newsGrid.innerHTML = ''; // 清空現有內容
+            newsContainer.innerHTML = '';
             
             if (newsData.length === 0) {
-                statusMessage.innerHTML = '<i class="ph ph-warning-circle text-3xl mb-2"></i><p>目前沒有最新新聞</p>';
+                statusMessage.innerHTML = '<i class="ph ph-warning-circle text-4xl mb-4"></i><p class="font-serif">目前沒有最新新聞</p>';
                 statusMessage.classList.remove('hidden');
                 return;
             }
 
-            newsData.forEach(item => {
-                // 建立卡片元素
-                const card = document.createElement('article');
-                card.className = "bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-sm hover:shadow-md border border-gray-100 dark:border-gray-700 transition-shadow flex flex-col h-full";
-                
-                card.innerHTML = `
-                    <div class="flex justify-between items-center mb-3">
-                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300">
-                            ${item.source}
-                        </span>
-                        <span class="text-xs text-gray-500 dark:text-gray-400 flex items-center gap-1">
-                            <i class="ph ph-clock"></i> ${item.publishedAt}
-                        </span>
-                    </div>
-                    <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2 line-clamp-2 leading-snug">
-                        ${item.title}
-                    </h3>
-                    <p class="text-sm text-gray-600 dark:text-gray-300 mb-4 line-clamp-3 flex-grow">
-                        ${item.summary}
+            // 將第一則設為頭條，其餘作為側邊欄
+            const heroArticle = newsData[0];
+            const sideArticles = newsData.slice(1);
+
+            // 構建頭條 HTML
+            const heroHTML = `
+                <article class="md:col-span-8 flex flex-col justify-center border-b md:border-b-0 md:border-r border-gray-300 dark:border-gray-700 pb-10 md:pb-0 md:pr-10">
+                    <span class="uppercase tracking-widest text-xs font-bold text-magazine-accent mb-4 block">Headlines · ${heroArticle.source}</span>
+                    <a href="${heroArticle.url}" target="_blank" rel="noopener noreferrer" class="group block">
+                        <h2 class="text-3xl md:text-5xl font-serif font-bold leading-tight mb-6 group-hover:text-magazine-accent transition-colors">
+                            ${heroArticle.title}
+                        </h2>
+                    </a>
+                    <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-6 font-serif">
+                        ${heroArticle.summary}
                     </p>
-                    <div class="mt-auto pt-4 border-t border-gray-100 dark:border-gray-700">
-                        <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 flex items-center gap-1 w-max transition-colors">
-                            閱讀原文 <i class="ph ph-arrow-up-right"></i>
-                        </a>
+                    <div class="flex items-center gap-4 mt-auto">
+                        <span class="text-sm text-gray-400 dark:text-gray-500 uppercase tracking-wider">${heroArticle.publishedAt}</span>
                     </div>
+                </article>
+            `;
+
+            // 構建側邊欄 HTML
+            let sideHTML = '<div class="md:col-span-4 flex flex-col gap-8">';
+            sideArticles.forEach(item => {
+                sideHTML += `
+                    <article class="border-b border-gray-200 dark:border-gray-800 pb-8 last:border-0 last:pb-0">
+                        <span class="uppercase tracking-widest text-[10px] font-bold text-gray-500 dark:text-gray-400 mb-2 block">${item.source}</span>
+                        <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="group block">
+                            <h3 class="text-xl font-serif font-bold leading-snug mb-3 group-hover:text-magazine-accent transition-colors">
+                                ${item.title}
+                            </h3>
+                        </a>
+                        <p class="text-sm text-gray-600 dark:text-gray-400 line-clamp-3 mb-3">${item.summary}</p>
+                        <span class="text-xs text-gray-400 dark:text-gray-500 uppercase">${item.publishedAt}</span>
+                    </article>
                 `;
-                newsGrid.appendChild(card);
             });
+            sideHTML += '</div>';
+
+            // 組合並渲染
+            newsContainer.innerHTML = heroHTML + sideHTML;
         }
 
-        // 載入資料的主函數 (未來會改為 fetch 'news.json')
         async function fetchNews() {
             statusMessage.classList.remove('hidden');
-            newsGrid.classList.add('hidden');
+            newsContainer.classList.add('hidden');
             
             try {
-                // 讀取 GitHub 目錄下的真實新聞檔案
-                const response = await fetch('news.json');
+                // 加上時間戳防止瀏覽器快取
+                const response = await fetch('news.json?t=' + new Date().getTime());
                 
-                // 如果找不到檔案(例如第一次還沒執行腳本時)，給予提示
-                if (!response.ok) {
-                    throw new Error("尚未產生新聞資料");
-                }
+                if (!response.ok) throw new Error("尚未產生新聞資料");
                 
                 const data = await response.json();
                 renderNews(data);
                 
                 statusMessage.classList.add('hidden');
-                newsGrid.classList.remove('hidden');
+                newsContainer.classList.remove('hidden');
             } catch (error) {
                 console.error("載入新聞失敗:", error);
-                statusMessage.innerHTML = '<i class="ph ph-x-circle text-3xl mb-2 text-red-500"></i><p>目前還沒有新聞資料，請等待機器人抓取完成。</p>';
+                statusMessage.innerHTML = '<i class="ph ph-newspaper text-4xl mb-4 text-gray-400"></i><p class="font-serif">等待機器人抓取今日新聞...</p>';
                 statusMessage.classList.remove('hidden');
             }
         }
 
-        // 綁定重新整理按鈕
         refreshBtn.addEventListener('click', fetchNews);
-
-        // 網頁載入後立即獲取新聞
         document.addEventListener('DOMContentLoaded', fetchNews);
 
     </script>
