@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>全球塗料產業動態 - The Coatings Post</title>
+    <title>全球塗料產業動態 - Color & Coat</title>
     
     <!-- 引入 Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -14,15 +14,6 @@
                 extend: {
                     fontFamily: {
                         sans: ['Inter', 'system-ui', 'sans-serif'],
-                        // 引入襯線字體，增加雜誌質感
-                        serif: ['"Noto Serif TC"', 'serif'],
-                    },
-                    colors: {
-                        magazine: {
-                            bg: '#faf9f6',
-                            darkbg: '#1a1a1a',
-                            accent: '#b91c1c', // 雜誌紅
-                        }
                     }
                 }
             }
@@ -31,59 +22,74 @@
 
     <!-- 引入字體與圖示 -->
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;900&display=swap');
-        body {
-            transition: background-color 0.3s ease, color 0.3s ease;
+        /* 流體背景動畫 (淺色模式) */
+        .bg-fluid {
+            background: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
+            background-size: 200% 200%;
+            animation: gradientMove 15s ease infinite;
+            transition: background 0.5s ease;
+        }
+        /* 流體背景動畫 (深色模式) */
+        .dark .bg-fluid {
+            background: linear-gradient(120deg, #1e1b4b 0%, #0f172a 100%);
+            background-size: 200% 200%;
+            animation: gradientMove 15s ease infinite;
+        }
+        
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
     </style>
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
-<body class="bg-magazine-bg text-gray-900 dark:bg-magazine-darkbg dark:text-gray-100 min-h-screen">
+<body class="bg-fluid min-h-screen text-gray-800 dark:text-gray-100 font-sans flex flex-col">
 
-    <!-- 頂部小工具列 -->
-    <div class="border-b border-gray-200 dark:border-gray-800">
-        <div class="max-w-6xl mx-auto px-4 md:px-8 py-2 flex justify-between items-center text-xs text-gray-500 dark:text-gray-400">
-            <div>
+    <!-- 頂部毛玻璃工具列 -->
+    <div class="sticky top-0 z-50 px-4 py-3">
+        <div class="max-w-6xl mx-auto bg-white/40 dark:bg-gray-900/50 backdrop-blur-md rounded-2xl px-6 py-3 flex justify-between items-center text-sm font-medium shadow-sm border border-white/30 dark:border-gray-700/50">
+            <div class="text-gray-700 dark:text-gray-200">
                 <span id="current-date"></span>
             </div>
             <div class="flex gap-4">
-                <button id="refresh-btn" class="hover:text-black dark:hover:text-white transition-colors flex items-center gap-1">
-                    <i class="ph ph-arrows-clockwise text-sm"></i> 重新整理
+                <button id="refresh-btn" class="text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors flex items-center gap-1">
+                    <i class="ph-bold ph-arrows-clockwise text-base"></i> <span class="hidden md:inline">重新整理</span>
                 </button>
-                <button id="theme-toggle" class="hover:text-black dark:hover:text-white transition-colors flex items-center gap-1">
-                    <i id="theme-icon" class="ph ph-moon text-sm"></i> <span id="theme-text">深色模式</span>
+                <button id="theme-toggle" class="text-gray-700 dark:text-gray-200 hover:text-purple-600 dark:hover:text-purple-400 transition-colors flex items-center gap-1">
+                    <i id="theme-icon" class="ph-bold ph-moon text-base"></i> <span id="theme-text" class="hidden md:inline">深色模式</span>
                 </button>
             </div>
         </div>
     </div>
 
-    <!-- 雜誌標題 Header -->
-    <header class="border-b-2 border-black dark:border-gray-600 py-6 px-4 md:px-8 max-w-6xl mx-auto flex justify-between items-center">
-        <h1 class="text-3xl md:text-5xl font-serif font-black tracking-tight">The Coatings Post</h1>
-        <div class="text-right hidden md:block">
-            <p class="text-sm font-bold uppercase tracking-widest text-magazine-accent">Daily Digest</p>
-            <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Global Industry News</p>
+    <!-- 標題區 -->
+    <header class="mt-8 mb-12 text-center px-4">
+        <div class="inline-flex items-center justify-center p-4 bg-white/30 dark:bg-gray-800/50 backdrop-blur-xl rounded-full mb-4 shadow-lg border border-white/40 dark:border-gray-600/50">
+            <i class="ph-fill ph-drop text-4xl text-blue-600 dark:text-blue-400"></i>
         </div>
+        <h1 class="text-4xl md:text-5xl font-extrabold text-white drop-shadow-md">Color & Coat</h1>
+        <p class="text-white/90 dark:text-gray-300 mt-3 font-medium tracking-wide">全球塗料產業・情報終端</p>
     </header>
 
     <!-- 主要內容區 -->
-    <main class="max-w-6xl mx-auto px-4 md:px-8 py-10">
+    <main class="max-w-7xl mx-auto px-4 md:px-8 pb-20 w-full flex-grow">
         
         <!-- 狀態顯示 -->
-        <div id="status-message" class="text-center py-20 text-gray-500 dark:text-gray-400">
-            <i class="ph ph-spinner animate-spin text-4xl mb-4"></i>
-            <p class="font-serif text-lg">正在載入最新產業動態...</p>
+        <div id="status-message" class="text-center py-20 text-white drop-shadow-md">
+            <i class="ph ph-spinner animate-spin text-5xl mb-4"></i>
+            <p class="text-lg font-medium">正在載入最新產業動態...</p>
         </div>
 
-        <!-- 雜誌網格佈局 (由 JS 填入內容) -->
-        <div id="news-container" class="grid grid-cols-1 md:grid-cols-12 gap-10 hidden">
+        <!-- 卡片網格佈局 (由 JS 填入內容) -->
+        <div id="news-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 hidden">
             <!-- 內容動態產生 -->
         </div>
 
     </main>
 
-    <footer class="border-t border-gray-200 dark:border-gray-800 py-8 mt-10 text-center text-sm text-gray-500 font-serif">
-        <p>© <script>document.write(new Date().getFullYear())</script> The Coatings Post. Automated via GitHub Actions.</p>
+    <footer class="py-6 text-center text-sm text-white/70 dark:text-gray-400 drop-shadow-sm mt-auto">
+        <p>© <script>document.write(new Date().getFullYear())</script> Color & Coat Dashboard. Automated via GitHub Actions.</p>
     </footer>
 
     <script>
@@ -119,7 +125,27 @@
             localStorage.setItem('color-theme', !isDark ? 'dark' : 'light');
         });
 
-        // --- 3. 新聞資料載入與渲染邏輯 ---
+        // --- 3. 根據來源決定漸層顏色 ---
+        function getBadgeGradient(source) {
+            const src = source.toLowerCase();
+            if (src.includes('coatings world')) return 'from-blue-500 to-teal-400';
+            if (src.includes('pci')) return 'from-purple-500 to-pink-500';
+            if (src.includes('european')) return 'from-green-400 to-emerald-500';
+            if (src.includes('google')) return 'from-orange-400 to-red-400';
+            return 'from-gray-500 to-gray-700';
+        }
+
+        // --- 4. 格式化時間 ---
+        function formatTime(dateStr) {
+            // 簡單擷取日期部分，讓排版更乾淨
+            try {
+                return dateStr.split(' ')[0] || dateStr;
+            } catch (e) {
+                return dateStr;
+            }
+        }
+
+        // --- 5. 新聞資料載入與渲染邏輯 ---
         const newsContainer = document.getElementById('news-container');
         const statusMessage = document.getElementById('status-message');
         const refreshBtn = document.getElementById('refresh-btn');
@@ -128,58 +154,45 @@
             newsContainer.innerHTML = '';
             
             if (newsData.length === 0) {
-                statusMessage.innerHTML = '<i class="ph ph-warning-circle text-4xl mb-4"></i><p class="font-serif">目前沒有最新新聞</p>';
+                statusMessage.innerHTML = '<i class="ph ph-warning-circle text-5xl mb-4"></i><p class="text-lg">目前沒有最新新聞</p>';
                 statusMessage.classList.remove('hidden');
                 return;
             }
 
-            // 將第一則設為頭條，其餘作為側邊欄
-            const heroArticle = newsData[0];
-            const sideArticles = newsData.slice(1);
-
-            // 構建頭條 HTML
-            const heroHTML = `
-                <article class="md:col-span-8 flex flex-col justify-center border-b md:border-b-0 md:border-r border-gray-300 dark:border-gray-700 pb-10 md:pb-0 md:pr-10">
-                    <span class="uppercase tracking-widest text-xs font-bold text-magazine-accent mb-4 block">Headlines · ${heroArticle.source}</span>
-                    <a href="${heroArticle.url}" target="_blank" rel="noopener noreferrer" class="group block">
-                        <h2 class="text-3xl md:text-5xl font-serif font-bold leading-tight mb-6 group-hover:text-magazine-accent transition-colors">
-                            ${heroArticle.title}
-                        </h2>
-                    </a>
-                    <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-6 font-serif">
-                        ${heroArticle.summary}
-                    </p>
-                    <div class="flex items-center gap-4 mt-auto">
-                        <span class="text-sm text-gray-400 dark:text-gray-500 uppercase tracking-wider">${heroArticle.publishedAt}</span>
-                    </div>
-                </article>
-            `;
-
-            // 構建側邊欄 HTML
-            let sideHTML = '<div class="md:col-span-4 flex flex-col gap-8">';
-            sideArticles.forEach(item => {
-                sideHTML += `
-                    <article class="border-b border-gray-200 dark:border-gray-800 pb-8 last:border-0 last:pb-0">
-                        <span class="uppercase tracking-widest text-[10px] font-bold text-gray-500 dark:text-gray-400 mb-2 block">${item.source}</span>
-                        <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="group block">
-                            <h3 class="text-xl font-serif font-bold leading-snug mb-3 group-hover:text-magazine-accent transition-colors">
-                                ${item.title}
-                            </h3>
+            let cardsHTML = '';
+            newsData.forEach(item => {
+                const badgeColor = getBadgeGradient(item.source);
+                const displayTime = formatTime(item.publishedAt);
+                
+                cardsHTML += `
+                    <article class="bg-white/60 dark:bg-gray-900/60 backdrop-blur-lg rounded-[2rem] p-6 shadow-xl border border-white/40 dark:border-gray-700/50 hover:-translate-y-2 transition-transform duration-300 flex flex-col h-full group">
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="bg-gradient-to-r ${badgeColor} text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">${item.source}</span>
+                            <span class="text-xs font-medium text-gray-600 dark:text-gray-300 bg-white/50 dark:bg-gray-800/60 px-2 py-1 rounded-lg">${displayTime}</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3 leading-tight line-clamp-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                            ${item.title}
+                        </h3>
+                        <p class="text-gray-700 dark:text-gray-400 mb-6 text-sm line-clamp-4 flex-grow">
+                            ${item.summary}
+                        </p>
+                        <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="w-full py-3 bg-white/80 dark:bg-gray-800/80 hover:bg-white dark:hover:bg-gray-700 text-blue-600 dark:text-blue-400 font-bold rounded-xl shadow-sm transition-colors flex items-center justify-center gap-2 mt-auto">
+                            Read Article <i class="ph-bold ph-arrow-right"></i>
                         </a>
-                        <p class="text-sm text-gray-600 dark:text-gray-400 line-clamp-3 mb-3">${item.summary}</p>
-                        <span class="text-xs text-gray-400 dark:text-gray-500 uppercase">${item.publishedAt}</span>
                     </article>
                 `;
             });
-            sideHTML += '</div>';
 
-            // 組合並渲染
-            newsContainer.innerHTML = heroHTML + sideHTML;
+            newsContainer.innerHTML = cardsHTML;
         }
 
         async function fetchNews() {
             statusMessage.classList.remove('hidden');
             newsContainer.classList.add('hidden');
+            
+            // 讓重新整理按鈕轉動
+            const refreshIcon = refreshBtn.querySelector('i');
+            refreshIcon.classList.add('animate-spin');
             
             try {
                 // 加上時間戳防止瀏覽器快取
@@ -194,8 +207,11 @@
                 newsContainer.classList.remove('hidden');
             } catch (error) {
                 console.error("載入新聞失敗:", error);
-                statusMessage.innerHTML = '<i class="ph ph-newspaper text-4xl mb-4 text-gray-400"></i><p class="font-serif">等待機器人抓取今日新聞...</p>';
+                statusMessage.innerHTML = '<i class="ph ph-newspaper text-5xl mb-4 text-white/70"></i><p class="text-lg">等待機器人抓取今日新聞...</p>';
                 statusMessage.classList.remove('hidden');
+            } finally {
+                // 停止轉動
+                setTimeout(() => refreshIcon.classList.remove('animate-spin'), 500);
             }
         }
 
