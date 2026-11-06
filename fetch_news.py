@@ -3,7 +3,8 @@ import requests
 import json
 import re
 import os
-from datetime import datetime
+import time
+from datetime import datetime, timedelta
 
 # 你的 Google Apps Script 翻譯 API 網址
 GAS_API_URL = "https://script.google.com/macros/s/AKfycbxcjyqA9fKv65j53MGHgi-o28Z--uGuL4EMl6CmPTUb8fIpkEa3AgdxgaNDyxu3TA/exec"
@@ -117,8 +118,28 @@ def main():
                 print(f"⚠️ 警告: 從 {feed_info['source']} 抓不到任何文章，跳過此來源。")
                 continue
                 
-            # 每個來源我們取前 5 篇最新文章
-            for entry in feed.entries[:5]:
+            # 篩選出符合時間條件（60天內）的文章，最多取 5 篇
+            valid_entries = []
+            now = datetime.now()
+            
+            for entry in feed.entries:
+                parsed_date = entry.get('published_parsed')
+                if parsed_date:
+                    # 將時間轉為 datetime 物件進行計算
+                    dt = datetime.fromtimestamp(time.mktime(parsed_date))
+                    if (now - dt).days > 60:
+                        continue # 超過 60 天的新聞，直接跳過，找下一篇
+                    pub_date_str = dt.strftime("%Y-%m-%d")
+                else:
+                    # 若無時間資訊，預設為今天
+                    pub_date_str = now.strftime("%Y-%m-%d")
+                    
+                valid_entries.append((entry, pub_date_str))
+                if len(valid_entries) >= 5:
+                    break
+                    
+            # 處理這 5 篇最新文章
+            for entry, pub_date in valid_entries:
                 original_title = entry.get('title', '')
                 original_summary = clean_html(entry.get('summary', ''))
                 
@@ -130,9 +151,6 @@ def main():
                 parts = translated_combined.split("|||")
                 zh_title = parts[0].strip() if len(parts) > 0 else original_title
                 zh_summary = parts[1].strip() if len(parts) > 1 else original_summary
-                
-                # 處理時間
-                pub_date = entry.get('published', datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
                 
                 news_item = {
                     "source": feed_info['source'],
