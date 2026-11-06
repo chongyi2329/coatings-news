@@ -3,7 +3,7 @@ import requests
 import json
 import re
 import time
-from datetime import datetime
+from datetime import datetime, timedelta
 import cloudscraper
 
 # 初始化反爬蟲瀏覽器
@@ -55,16 +55,26 @@ def main():
                 print("❌ 找不到任何新聞條目")
                 continue
                 
-            # 直接擷取最新的 5 篇文章
-            latest_entries = feed.entries[:5]
+            valid_count = 0
             
-            for entry in latest_entries:
+            for entry in feed.entries:
+                # 如果已經抓滿 5 篇合格的，就跳出迴圈
+                if valid_count >= 5:
+                    break
+
                 # 處理發布時間
                 parsed_date = entry.get('published_parsed')
                 if parsed_date:
                     dt = datetime.fromtimestamp(time.mktime(parsed_date))
+                    
+                    # 【嚴格海關審查】檢查是否超過 30 天
+                    if now - dt > timedelta(days=30):
+                        print(f"⚠️ 跳過過期文章: {entry.get('title', '')}")
+                        continue
+                        
                     pub_date_str = dt.strftime("%Y-%m-%d")
                 else:
+                    # 如果沒有時間標籤，視為當天
                     pub_date_str = now.strftime("%Y-%m-%d")
                 
                 # 提取標題與摘要
@@ -84,6 +94,7 @@ def main():
                     "publishedAt": pub_date_str
                 })
                 print(f"✅ 已處理: {zh_title}")
+                valid_count += 1
                 
         except Exception as e:
             print(f"❌ 抓取 {feed_info['source']} 失敗: {e}")
