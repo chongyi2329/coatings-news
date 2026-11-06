@@ -118,8 +118,9 @@ def main():
                 print(f"⚠️ 警告: 從 {feed_info['source']} 抓不到任何文章，跳過此來源。")
                 continue
                 
-            # 篩選出符合時間條件（60天內）的文章，最多取 5 篇
+            # 篩選出符合時間條件（30天內）的文章，最多取 5 篇
             valid_entries = []
+            fallback_entries = [] # 備胎：無條件存放最新的 5 篇
             now = datetime.now()
             
             for entry in feed.entries:
@@ -127,18 +128,29 @@ def main():
                 if parsed_date:
                     # 將時間轉為 datetime 物件進行計算
                     dt = datetime.fromtimestamp(time.mktime(parsed_date))
-                    if (now - dt).days > 60:
-                        continue # 超過 60 天的新聞，直接跳過，找下一篇
+                    age_days = (now - dt).days
                     pub_date_str = dt.strftime("%Y-%m-%d")
                 else:
                     # 若無時間資訊，預設為今天
+                    age_days = 0
                     pub_date_str = now.strftime("%Y-%m-%d")
+                
+                # 不管時間多舊，先存進備胎名單（最多存 5 個）
+                if len(fallback_entries) < 5:
+                    fallback_entries.append((entry, pub_date_str))
                     
-                valid_entries.append((entry, pub_date_str))
-                if len(valid_entries) >= 5:
-                    break
+                # 檢查是否符合 30 天內的條件
+                if age_days <= 30:
+                    valid_entries.append((entry, pub_date_str))
+                    if len(valid_entries) >= 5:
+                        break # 已經湊滿 5 篇近期文章，結束篩選
+            
+            # 檢查結果：如果連 1 篇近期新聞都沒有，就啟用備胎方案
+            if not valid_entries:
+                print(f"⚠️ 提示: {feed_info['source']} 沒有 30 天內的新聞，已切換為抓取最新的 {len(fallback_entries)} 篇。")
+                valid_entries = fallback_entries
                     
-            # 處理這 5 篇最新文章
+            # 處理這批文章 (翻譯並存入清單)
             for entry, pub_date in valid_entries:
                 original_title = entry.get('title', '')
                 original_summary = clean_html(entry.get('summary', ''))
