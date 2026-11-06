@@ -6,19 +6,20 @@ import os
 import time
 from datetime import datetime, timedelta
 from bs4 import BeautifulSoup
+import cloudscraper
+
+# 初始化反爬蟲瀏覽器 (取代一般的 requests)
+scraper = cloudscraper.create_scraper(browser={'browser': 'chrome', 'platform': 'windows', 'mobile': False})
 
 # Google Apps Script 翻譯 API 網址
 GAS_API_URL = "https://script.google.com/macros/s/AKfycbxcjyqA9fKv65j53MGHgi-o28Z--uGuL4EMl6CmPTUb8fIpkEa3AgdxgaNDyxu3TA/exec"
 
-# 1. 傳統 RSS 與 Google News 代理來源
+# 1. 傳統 RSS 與 Google News 代理來源 (強制加上 when:30d)
 RSS_FEEDS = [
-    {"source": "Google News (Coatings)", "url": 'https://news.google.com/rss/search?q="coatings+industry"+OR+"paint+industry"&hl=en-US&gl=US&ceid=US:en'},
+    {"source": "Google News (Coatings)", "url": 'https://news.google.com/rss/search?q="coatings+industry"+OR+"paint+industry"+when:30d&hl=en-US&gl=US&ceid=US:en'},
     {"source": "Coatings World", "url": "https://www.coatingsworld.com/rss"},
-    {"source": "PCI Magazine", "url": "https://news.google.com/rss/search?q=site:pcimag.com&hl=en-US&gl=US&ceid=US:en"},
-    {"source": "European Coatings", "url": "https://www.european-coatings.com/rss"},
-    {"source": "中外塗料網", "url": "https://news.google.com/rss/search?q=site:27580.cn&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"},
-    {"source": "慧聰塗料網", "url": "https://news.google.com/rss/search?q=site:hzeyun.com&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"},
-    {"source": "中國塗料", "url": "https://news.google.com/rss/search?q=site:chinacoatings.com.cn&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"}
+    {"source": "PCI Magazine", "url": "https://news.google.com/rss/search?q=site:pcimag.com+when:30d&hl=en-US&gl=US&ceid=US:en"},
+    {"source": "European Coatings", "url": "https://www.european-coatings.com/rss"}
 ]
 
 headers = {
@@ -35,7 +36,7 @@ def clean_html(raw_html):
 def translate_text(text):
     if not text: return ""
     try:
-        response = requests.post(GAS_API_URL, json={"text": text}, timeout=15)
+        response = scraper.post(GAS_API_URL, json={"text": text}, timeout=15)
         data = response.json()
         if data.get("success"):
             return data.get("translatedText")
@@ -44,37 +45,29 @@ def translate_text(text):
         return text
 
 def parse_custom_nippon_paint():
-    """客製化解析：日本塗料控股 (只抓研發與產品)"""
+    """客製化解析：日本塗料控股 (暴力破解連結法)"""
     print(f"\n正在客製化抓取: Nippon Paint Holdings")
     news_list = []
     try:
-        res = requests.get("https://www.nipponpaint-holdings.com/en/news_release/", headers=headers, timeout=15)
+        # 使用 cloudscraper 繞過部分限制
+        res = scraper.get("https://www.nipponpaint-holdings.com/en/news_release/", timeout=15)
         soup = BeautifulSoup(res.text, 'html.parser')
         
-        # 尋找所有可能包含新聞的區塊 (啟發式搜尋)
-        articles = soup.find_all(['div', 'li', 'tr', 'dl'])
-        
-        for article in articles:
-            text_content = article.get_text(separator=' ', strip=True)
-            # 過濾：只抓取研發(Research)與產品(Products)
-            if 'Research and Development' in text_content or 'Products' in text_content:
-                link_tag = article.find('a')
-                if link_tag and link_tag.get('href'):
-                    title = link_tag.get_text(strip=True)
-                    if not title or len(title) < 10: 
-                        continue
-                        
-                    url = link_tag['href']
-                    if url.startswith('/'): url = "https://www.nipponpaint-holdings.com" + url
-                    
-                    # 嘗試抓取日期 YYYY.MM.DD
-                    date_match = re.search(r'20\d{2}\.\d{2}\.\d{2}', text_content)
-                    pub_date = date_match.group(0).replace('.', '-') if date_match else datetime.now().strftime("%Y-%m-%d")
-                    
-                    # 去重複
-                    if not any(n['url'] == url for n in news_list):
-                        news_list.append({"title": title, "url": url, "pub_date": pub_date})
-                        if len(news_list) >= 5: break
+        # 尋找所有 <a> 標籤，透過網址特徵抓取
+        for link in soup.find_all('a', href=True):
+            url = link['href']
+            title = link.get_text(strip=True)
+            
+            # 日本塗料的新聞網址通常包含年份如 /2026/ 或 /news/
+            if '/en/news_release/20' in url and len(title) > 15:
+                if url.startswith('/'): url = "https://www.nipponpaint-holdings.com" + url
+                
+                # 從網址或標題推測日期，若無則標記今日
+                pub_date = datetime.now().strftime("%Y-%m-%d")
+                
+                if not any(n['url'] == url for n in news_list):
+                    news_list.append({"title": title, "url": url, "pub_date": pub_date})
+                    if len(news_list) >= 5: break
     except Exception as e:
         print(f"Nippon Paint 解析失敗: {e}")
     return [{"source": "日本塗料控股", "title": n["title"], "summary": "", "url": n["url"], "publishedAt": n["pub_date"]} for n in news_list]
@@ -84,19 +77,17 @@ def parse_custom_specialchem():
     print(f"\n正在客製化抓取: SpecialChem")
     news_list = []
     try:
-        res = requests.get("https://coatings.specialchem.com/news", headers=headers, timeout=15)
+        # 使用 cloudscraper 對抗 Cloudflare
+        res = scraper.get("https://coatings.specialchem.com/news", timeout=15)
         soup = BeautifulSoup(res.text, 'html.parser')
         
-        # 尋找新聞區塊
-        for item in soup.find_all('div', class_=re.compile(r'news|item|article', re.I)):
-            link_tag = item.find('a')
-            if link_tag and link_tag.get('href') and 'news' in link_tag['href']:
-                title = link_tag.get_text(strip=True)
+        for item in soup.find_all('a', href=True):
+            url = item['href']
+            if '/news/' in url and item.get_text(strip=True):
+                title = item.get_text(strip=True)
                 if len(title) > 15:
-                    url = link_tag['href']
                     if url.startswith('/'): url = "https://coatings.specialchem.com" + url
-                    pub_date = datetime.now().strftime("%Y-%m-%d") # SpecialChem 日期格式較複雜，預設為抓取當日
-                    
+                    pub_date = datetime.now().strftime("%Y-%m-%d")
                     if not any(n['url'] == url for n in news_list):
                         news_list.append({"title": title, "url": url, "pub_date": pub_date})
                         if len(news_list) >= 5: break
@@ -109,31 +100,53 @@ def parse_custom_coating_media():
     print(f"\n正在客製化抓取: Coating Media")
     news_list = []
     try:
-        res = requests.get("https://www.coatingmedia.com/", headers=headers, timeout=15)
-        res.encoding = 'utf-8'
+        res = scraper.get("https://www.coatingmedia.com/", timeout=15)
+        res.encoding = res.apparent_encoding # 自動偵測日文編碼
         soup = BeautifulSoup(res.text, 'html.parser')
         
-        # 尋找網頁中的所有連結，利用文字長度和日期特徵過濾
-        for link_tag in soup.find_all('a'):
+        for link_tag in soup.find_all('a', href=True):
             title = link_tag.get_text(strip=True)
             parent_text = link_tag.parent.get_text(separator=' ', strip=True)
             
-            # 尋找 YYYY年MM月DD日 的特徵
-            date_match = re.search(r'(20\d{2})年(\d{1,2})月(\d{1,2})日', parent_text)
+            # 放寬日期特徵比對 (支援 2026/10/05 或 2026年10月5日)
+            date_match = re.search(r'(20\d{2})[年/](\d{1,2})[月/](\d{1,2})', parent_text)
             
-            if date_match and len(title) > 10 and link_tag.get('href'):
+            if date_match and len(title) > 10:
                 url = link_tag['href']
                 if url.startswith('/'): url = "https://www.coatingmedia.com" + url
-                
-                # 格式化日期
                 pub_date = f"{date_match.group(1)}-{int(date_match.group(2)):02d}-{int(date_match.group(3)):02d}"
                 
-                if not any(n['url'] == url for n in news_list):
-                    news_list.append({"title": title, "url": url, "pub_date": pub_date})
-                    if len(news_list) >= 5: break
+                # 嚴格審查 30 天
+                dt = datetime.strptime(pub_date, "%Y-%m-%d")
+                if (datetime.now() - dt).days <= 30:
+                    if not any(n['url'] == url for n in news_list):
+                        news_list.append({"title": title, "url": url, "pub_date": pub_date})
+                        if len(news_list) >= 5: break
     except Exception as e:
         print(f"Coating Media 解析失敗: {e}")
     return [{"source": "Coating Media", "title": n["title"], "summary": "", "url": n["url"], "publishedAt": n["pub_date"]} for n in news_list]
+
+def parse_chinese_sites():
+    """客製化解析：中國塗料網"""
+    print(f"\n正在客製化抓取: 中外塗料網")
+    news_list = []
+    try:
+        res = scraper.get("http://www.27580.cn/important", timeout=15)
+        res.encoding = res.apparent_encoding
+        soup = BeautifulSoup(res.text, 'html.parser')
+        
+        for link in soup.find_all('a', href=True):
+            title = link.get_text(strip=True)
+            if len(title) > 12 and ('news' in link['href'] or 'article' in link['href']):
+                url = link['href']
+                if url.startswith('/'): url = "http://www.27580.cn" + url
+                pub_date = datetime.now().strftime("%Y-%m-%d")
+                if not any(n['url'] == url for n in news_list):
+                    news_list.append({"title": title, "url": url, "pub_date": pub_date})
+                    if len(news_list) >= 3: break
+    except Exception as e:
+        print(f"中外塗料網 解析失敗: {e}")
+    return [{"source": "中外塗料網", "title": n["title"], "summary": "", "url": n["url"], "publishedAt": n["pub_date"]} for n in news_list]
 
 def main():
     all_news = []
@@ -143,14 +156,13 @@ def main():
     for feed_info in RSS_FEEDS:
         print(f"\n正在抓取來源 (RSS): {feed_info['source']}")
         try:
-            res = requests.get(feed_info['url'], headers=headers, timeout=15)
+            res = scraper.get(feed_info['url'], timeout=15)
             if res.status_code != 200: continue
             
             feed = feedparser.parse(res.content)
             if not feed.entries: continue
                 
             valid_entries = []
-            fallback_entries = []
             
             for entry in feed.entries:
                 parsed_date = entry.get('published_parsed')
@@ -159,18 +171,13 @@ def main():
                     age_days = (now - dt).days
                     pub_date_str = dt.strftime("%Y-%m-%d")
                 else:
-                    age_days = 0
+                    age_days = 0 # 無法解析時間視為最新
                     pub_date_str = now.strftime("%Y-%m-%d")
                 
-                if len(fallback_entries) < 5:
-                    fallback_entries.append((entry, pub_date_str))
-                    
+                # 嚴格執行 30 天規定 (移除備胎機制)
                 if age_days <= 30:
                     valid_entries.append((entry, pub_date_str))
                     if len(valid_entries) >= 5: break
-            
-            if not valid_entries:
-                valid_entries = fallback_entries
                     
             for entry, pub_date in valid_entries:
                 original_title = entry.get('title', '')
@@ -196,13 +203,7 @@ def main():
     custom_news_raw.extend(parse_custom_nippon_paint())
     custom_news_raw.extend(parse_custom_specialchem())
     custom_news_raw.extend(parse_custom_coating_media())
-    
-    for item in custom_news_raw:
-        # 進行翻譯
-        zh_title = translate_text(item['title'])
-        all_news.append({
-            "source": item['source'],
-            "title": zh_title,
+    custom_news_raw.extend(parse_chinese_sites())
             "summary": "", # 客製化爬蟲通常難以穩定抓取摘要，保留空白讓版面維持整潔
             "url": item['url'],
             "publishedAt": item['publishedAt']
