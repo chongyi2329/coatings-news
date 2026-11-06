@@ -8,8 +8,9 @@ from datetime import datetime
 # 你的 Google Apps Script 翻譯 API 網址
 GAS_API_URL = "https://script.google.com/macros/s/AKfycbxcjyqA9fKv65j53MGHgi-o28Z--uGuL4EMl6CmPTUb8fIpkEa3AgdxgaNDyxu3TA/exec"
 
-# 我們要抓取的 RSS 來源清單 (新增 PCI Magazine 與 European Coatings)
+# 我們要抓取的 RSS 來源清單 (保留舊有來源，並透過 Google News 代理新增亞洲與全球媒體)
 RSS_FEEDS = [
+    # ---- 原有來源 (歐美) ----
     {
         "source": "Google News (Coatings)",
         "url": 'https://news.google.com/rss/search?q="coatings+industry"+OR+"paint+industry"&hl=en-US&gl=US&ceid=US:en'
@@ -25,6 +26,40 @@ RSS_FEEDS = [
     {
         "source": "European Coatings",
         "url": "https://www.european-coatings.com/rss"
+    },
+    
+    # ---- 新增來源 (中國) ----
+    {
+        "source": "中外塗料網",
+        "url": "https://news.google.com/rss/search?q=site:27580.cn&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"
+    },
+    {
+        "source": "慧聰塗料網",
+        "url": "https://news.google.com/rss/search?q=site:hzeyun.com&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"
+    },
+    {
+        "source": "中國塗料",
+        "url": "https://news.google.com/rss/search?q=site:chinacoatings.com.cn&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"
+    },
+
+    # ---- 新增來源 (日本) ----
+    {
+        "source": "塗料報知",
+        "url": "https://news.google.com/rss/search?q=site:e-toryo.co.jp&hl=ja&gl=JP&ceid=JP:ja"
+    },
+    {
+        "source": "Coating Media",
+        "url": "https://news.google.com/rss/search?q=site:coatingmedia.com&hl=ja&gl=JP&ceid=JP:ja"
+    },
+    {
+        "source": "日本塗料控股",
+        "url": "https://news.google.com/rss/search?q=site:nipponpaint-holdings.com&hl=ja&gl=JP&ceid=JP:ja"
+    },
+
+    # ---- 新增來源 (全球材料) ----
+    {
+        "source": "SpecialChem",
+        "url": "https://news.google.com/rss/search?q=site:specialchem.com+coatings&hl=en-US&gl=US&ceid=US:en"
     }
 ]
 
