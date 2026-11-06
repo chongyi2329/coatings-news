@@ -168,7 +168,9 @@
                     <article class="bg-white/60 dark:bg-gray-900/60 backdrop-blur-lg rounded-[2rem] p-6 shadow-xl border border-white/40 dark:border-gray-700/50 hover:-translate-y-2 transition-transform duration-300 flex flex-col h-full group">
                         <div class="flex justify-between items-center mb-4">
                             <span class="bg-gradient-to-r ${badgeColor} text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">${item.source}</span>
-                            <span class="text-xs font-medium text-gray-600 dark:text-gray-300 bg-white/50 dark:bg-gray-800/60 px-2 py-1 rounded-lg">${displayTime}</span>
+                            <span class="text-xs font-medium text-gray-600 dark:text-gray-300 bg-white/50 dark:bg-gray-800/60 px-2 py-1 rounded-lg flex items-center gap-1">
+                                <i class="ph ph-calendar-blank"></i> ${displayTime}
+                            </span>
                         </div>
                         <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3 leading-tight line-clamp-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                             ${item.title}
