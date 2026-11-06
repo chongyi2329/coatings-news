@@ -2,21 +2,20 @@ import feedparser
 import requests
 import json
 import re
-import os
 import time
 from datetime import datetime
 import cloudscraper
 
-# 初始化反爬蟲瀏覽器 (突破 Cloudflare 與基本防護)
+# 初始化反爬蟲瀏覽器
 scraper = cloudscraper.create_scraper(browser={'browser': 'chrome', 'platform': 'windows', 'mobile': False})
 
 # Google Apps Script 翻譯 API 網址
 GAS_API_URL = "https://script.google.com/macros/s/AKfycbxcjyqA9fKv65j53MGHgi-o28Z--uGuL4EMl6CmPTUb8fIpkEa3AgdxgaNDyxu3TA/exec"
 
-# 1. 傳統 RSS 與 Google News 代理來源 (強制過濾最近30天)
+# 替換 Coatings World 為 Google 代理版本
 RSS_FEEDS = [
     {"source": "Google News (Coatings)", "url": 'https://news.google.com/rss/search?q="coatings+industry"+OR+"paint+industry"+when:30d&hl=en-US&gl=US&ceid=US:en'},
-    {"source": "Coatings World", "url": "https://www.coatingsworld.com/rss"},
+    {"source": "Coatings World", "url": "https://news.google.com/rss/search?q=site:coatingsworld.com+when:30d&hl=en-US&gl=US&ceid=US:en"},
     {"source": "PCI Magazine", "url": "https://news.google.com/rss/search?q=site:pcimag.com+when:30d&hl=en-US&gl=US&ceid=US:en"},
     {"source": "European Coatings", "url": "https://www.european-coatings.com/rss"}
 ]
@@ -43,9 +42,8 @@ def main():
     all_news = []
     now = datetime.now()
     
-    # 依序處理 4 個主要來源
     for feed_info in RSS_FEEDS:
-        print(f"\n正在抓取來源 (RSS): {feed_info['source']}")
+        print(f"\n正在抓取來源: {feed_info['source']}")
         try:
             res = scraper.get(feed_info['url'], timeout=15)
             if res.status_code != 200: 
