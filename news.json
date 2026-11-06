@@ -1,282 +1,121 @@
 [
     {
-        "source": "Google News (Coatings)",
-        "title": "亞太塗料產業協會：儘管充滿不確定性，但仍保持謹慎樂觀－歐洲塗料",
-        "summary": "亞太塗料產業協會：儘管充滿不確定性，但仍保持謹慎樂觀&nbsp;&nbsp;歐洲塗料",
-        "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxObGRNcHhleldJQnFHN00wT0Mtd0hmZG16VmFpN004WnVrY1hKLVdJZlo3SmpGcGdhV1J0dUxkVUJzRGRlOXE3bFNiNl92cUljc2JJSnNiRkcxYnFuN3liMW1HblItcUFIUXNudGs3OXNNa2lsUVVMdDA1WENOMHpDV3RDZmJGb2NaVEEwazRIdHViVldNMGY2ZVllZF95TzlJWEpxQl9QdjFILTd1cnBLWURlemRsX0FoVWJjY0pPMHEwT05XYlBfdU9SMW82RUU?oc=5",
-        "publishedAt": "Thu, 30 Jul 2026 07:00:00 GMT"
-    },
-    {
-        "source": "Google News (Coatings)",
-        "title": "House of Kolor 如何協助塑造現代客製化噴漆產業 - www.fenderbender.com",
-        "summary": "House of Kolor 如何協助塑造現代客製化噴漆產業 www.fenderbender.com",
-        "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOTkJPS1lHdmZwRllEQlpZLU85eDZKWWhVZFVuUDF5MGhJd2VrNFYwMEtsQ0hza3dpamRzQjRxaVFDNXhaaWM4em9mTGV4OE5DWXZ1bUdwYm5EQWlLMF9PejN2QmdNNG4wUE5mRVF5UFFPTmpqQ3pFblYzQUVmNHB6TmtrUUw1QWllamZIVW1Hdmw5UTV3b0N0MS00Z09pV0NQR3JDSHd4VW14bmFFdEs0RWg0eDA0N3YxZlE?oc=5",
-        "publishedAt": "Thu, 25 Jun 2026 07:00:00 GMT"
-    },
-    {
-        "source": "Google News (Coatings)",
-        "title": "亞太塗料產業 - 塗料世界",
-        "summary": "亞太塗料產業塗料世界",
-        "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE5yVWtDWW5na0pQQXotdUgtejdLWjNfU20wVEoyaXV6OENoakRwMmdtWW84WGVkYWlocU90YkNvU3dOcnltaVUxRm9LNS03blI1cGZQX2pyTnJwUjdwS09DMFZQMV83am96SWxnd051clRONGVZMnB6dk1PWQ?oc=5",
-        "publishedAt": "Mon, 31 Aug 2026 07:00:00 GMT"
-    },
-    {
-        "source": "Google News (Coatings)",
-        "title": "德雷塞爾大學化學工程系學生在塗料行業獲得實務經驗",
-        "summary": "德雷塞爾大學化學工程系學生在塗料行業獲得實務經驗",
-        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNQmdkNW1UbTNyNGV6TTdUTHp4QUtsOGpNbkRNcEVrcVhUQmp0ZUY2UXQ5ak1rRVUwTmkzUHAwVnRfbnU5TjR4VVdRNEN4eG9BbTROdW84bU53UXg5MWhaeWlJdEpzcDZ0VGR4NzVOSkhsWDhPQ3FtWC05V0Y1bG41MTVVcWdYVE9UWU82eHJuRHo2bzBzWVdjcw?oc=5",
-        "publishedAt": "Thu, 04 Dec 2025 08:00:00 GMT"
-    },
-    {
-        "source": "Google News (Coatings)",
-        "title": "阿克蘇諾貝爾與艾仕得的交易重振塗料行業 - 《全球金融》雜誌",
-        "summary": "阿克蘇諾貝爾與艾仕得的交易重振塗料行業&nbsp;&nbsp;《全球金融》雜誌",
-        "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNeGlnMjFPall3VTdJS1RaN2ltWFJaTjJBMGZWYWdJT2RKMmlGMmdRQmlxSXEwVVNMZS1wYWZHbUxfSjlfU093Ym5pOEpLTlNrQUMxZkRHUkk2TmF4bmRHeHhFMlczeTJXX1ZoRGFVTVNtQnQ0dGxJUkhFTUoyZEQ1OEpLUkVZUDBYQzVSblVwYmU3TTBsSGtVYlJHVDNtbGFueTVR?oc=5",
-        "publishedAt": "Mon, 08 Dec 2025 08:00:00 GMT"
-    },
-    {
         "source": "Coatings World",
         "title": "日本船舶塗料市場",
         "summary": "日本船舶塗料生產商正大力投資提升產能，以應對未來幾年預計將出現的巨大需求。\n\n本文《日本船舶塗料市場》首發於 Coatings World 網站。",
         "url": "https://www.coatingsworld.com/the-marine-coating-market-in-japan/",
-        "publishedAt": "Tue, 03 Nov 2026 21:34:42 +0000"
+        "publishedAt": "2026-11-03"
     },
     {
         "source": "Coatings World",
         "title": "埃及再生能源投資將如何影響國內塗料市場",
         "summary": "風能和太陽能項目，以及埃及2024年氫能戰略的實施，預計將刺激對現代塗料解決方案的需求。\n\n本文《埃及再生能源投資將如何影響國內塗料市場》原刊於《塗料世界》網站。",
         "url": "https://www.coatingsworld.com/how-egypts-renewable-energy-investment-may-impact-domestic-paints-and-coatings-market/",
-        "publishedAt": "Tue, 03 Nov 2026 21:20:06 +0000"
+        "publishedAt": "2026-11-03"
     },
     {
         "source": "Coatings World",
         "title": "披薩引發併購熱潮！義大利經濟成長刺激併購活動",
         "summary": "Berlac 和 RPM International 等公司宣布了新的收購計劃。\n\n本文《披薩引發併購熱潮！義大利經濟成長刺激併購活動》原刊於 Coatings World 網站。",
         "url": "https://www.coatingsworld.com/a-pizza-the-action-italian-growth-stimulates-ma-interest/",
-        "publishedAt": "Wed, 28 Oct 2026 23:54:30 +0000"
-    },
-    {
-        "source": "Coatings World",
-        "title": "霍爾木茲海峽局勢的影響",
-        "summary": "霍爾木茲海峽的關閉是影響亞太市場的關鍵問題之一。\n\n本文《霍爾木茲海峽局勢的影響》原刊於 Coatings World 網站。",
-        "url": "https://www.coatingsworld.com/impact-of-strait-of-hormuz-situation/",
-        "publishedAt": "Mon, 31 Aug 2026 14:31:37 +0000"
-    },
-    {
-        "source": "Coatings World",
-        "title": "魯帕莉·哈克·喬杜里：與貝爾格塗料孟加拉國的領導力之旅",
-        "summary": "魯帕莉·哈克·喬杜里與貝爾格塗料孟加拉國相得益彰。領導力是他們成功故事的核心。提到貝爾格塗料，人們首先想到的就是魯帕莉·哈克·喬杜里，她是孟加拉國企業界的標誌性人物，也是塗料行業的傳奇人物。貝爾格塗料曾是[...]\n\n本文《魯帕莉·哈克·喬杜里：與貝爾格塗料孟加拉國的領導力之旅》原刊於《塗料世界》網站。",
-        "url": "https://www.coatingsworld.com/rupali-haque-chowdhury-a-leadership-journey-with-berger-paints-bangladesh/",
-        "publishedAt": "Mon, 31 Aug 2026 14:20:36 +0000"
-    },
-    {
-        "source": "PCI Magazine",
-        "title": "PPG斥資2.8億美元啟動擴建計畫 - PCI雜誌",
-        "summary": "PPG斥資2.8億美元啟動擴建計畫&nbsp;&nbsp;PCI雜誌",
-        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQbjk5ckpqMFM1Tk9oRm5VcFpuU0ZyV3JCTzE4MF9LdjNlSjFGVWQ4MnpKVGNqQXBWS1JsMjB2eHpIS3BjSFViRmI0Z2JIdUw0TWFYS1dwaVBrQnlkUU12M2dwZHhWSndEdmtvX21uNkFyYU92Yk5vdHhQMUFmN1diUHRuR1dUdXEzNE1wbXhaYTlORmd1dnRCUElfSQ?oc=5",
-        "publishedAt": "Tue, 11 Aug 2026 07:00:00 GMT"
-    },
-    {
-        "source": "PCI Magazine",
-        "title": "鳥糞導致汽車清漆劣化 - PCI雜誌",
-        "summary": "鳥糞導致汽車清漆劣化&nbsp;&nbsp;PCI雜誌",
-        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNTjFoMDF5OEViU0JqUUlRczBmaFNiSUtPTk5QcVVsRy1zNVozaDc5ZFVZSGF2LWlDUUNPQ2hZazNGMHQ3VmZEVlA3OGx5a1lzdnVmS1pOU0EzVlZobGpJeVpkWXZhN0dnYkFPT255OXhzLXdwWFRxSEF2QXdxV0dUSXoyZmVpWlBBazJ2STRYUE9ZTTY0Tjk5NTliNU85anA3?oc=5",
-        "publishedAt": "Mon, 09 Aug 2021 07:00:00 GMT"
-    },
-    {
-        "source": "PCI Magazine",
-        "title": "由《塗料與塗層產業雜誌》(PCI Magazine)主辦的塗料趨勢與技術高峰會",
-        "summary": "由《塗料與塗層產業雜誌》(PCI Magazine)主辦的塗料趨勢與科技高峰會",
-        "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBkMVJlQkhUUUFYLXQ2V2NSN1ZwN2lYbGtQOWdxaDZtbmRZNnJjOE1IOTlXSld4UmRvT2tSOFFUYlJYSEFycHl3QnVxOTBkazlEMnNpSA?oc=5",
-        "publishedAt": "Thu, 29 Nov 2018 21:52:24 GMT"
-    },
-    {
-        "source": "PCI Magazine",
-        "title": "關鍵創新推動包裝塗料市場成長 - PCI雜誌",
-        "summary": "關鍵創新推動包裝塗料市場成長&nbsp;&nbsp;PCI雜誌",
-        "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQRkFKM19hd1NBUnNFenhBLTBtU3lzWTRHNXNSQ1VlbnVfcTdiZ0pTSjJvMExyZERkMFROc1RlT05keGMzQ1dqM3NHSzBmdm9qX0picHg5SVZKMHV4SjNrd1VUMEJkNUFOcWEtX0VpZUowMnkwREh4RF9VOTEyMm1XZmJqT0JlekZnSXNSRnRKYmJib2x2X0VJeVdpVURqVVhRYmc?oc=5",
-        "publishedAt": "Fri, 23 Aug 2024 07:00:00 GMT"
-    },
-    {
-        "source": "PCI Magazine",
-        "title": "環氧樹脂胺固化：選擇方案及關鍵配方考量 - PCI雜誌",
-        "summary": "環氧樹脂胺固化：選擇方案及關鍵配方考量&nbsp;&nbsp;PCI雜誌",
-        "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOSDhVbVhLRVc5elBjVG1iY3c4UnVSWUxmN1NDRGhGdTVaLXpjU0gySzNFeU9UclcwNnc5SXg2Z3FrUjQ3Z0NFRVZ2eDhlZ0Y4RUs2a015cXpZdmZydnJlQXpraDBNR21fQ0Z3clBELVhROXRScldXUFdQcUdaZGFYcW5HMHJLQkdaRXNLTGdNY0lMTzNOQUtYZDJEbUxMYTNxSnNjZTR2dldLbDJVelE?oc=5",
-        "publishedAt": "Thu, 01 Jun 2006 07:00:00 GMT"
+        "publishedAt": "2026-10-28"
     },
     {
         "source": "European Coatings",
         "title": "IMCD任命Martin Wolf為中國區總經理",
         "summary": "IMCD已任命Martin Wolf為中國區總經理，自2026年10月起生效。 Wolf在化學產業擁有超過20年的經驗，他將致力於加強與供應商和客戶的關係，並推動公司在中國市場的業務成長。",
         "url": "https://www.european-coatings.com/news/people-careers/imcd-appoints-martin-wolf-as-managing-director-for-china-operations/",
-        "publishedAt": "Thu, 05 Nov 2026 13:38:33 +0000"
+        "publishedAt": "2026-11-05"
     },
     {
         "source": "European Coatings",
         "title": "加速測試改變薄型聚烯烴食品接觸材料",
         "summary": "對於食品接觸材料（FCM），例如印刷食品包裝，化學物質向食品中的遷移至關重要：包裝或油墨層中的物質可能會以微量轉移到食品中。作者：EuPIA 的 Christof Walter 博士；Sun Chemical 的 Mike Simoni；以及 Hubergroup 的 Werner Oechsle。",
         "url": "https://www.european-coatings.com/news/legislation/accelerated-tests-alter-thin-polyolefin-fcm/",
-        "publishedAt": "Thu, 05 Nov 2026 11:00:03 +0000"
+        "publishedAt": "2026-11-05"
     },
     {
         "source": "European Coatings",
         "title": "諾丁漢大學推出人工智慧驅動的塗層研發機器人實驗室",
         "summary": "諾丁漢大學的研究人員開發了一套自動駕駛實驗室，該實驗室結合了人工智慧和機器人技術，可自動完成耐熱塗層的研發。該系統將液體點膠、機器人操作和高溫爐處理整合到一個工作流程中，支援用於航空航太和能源領域的先進隔熱塗層的開發。",
         "url": "https://www.european-coatings.com/news/coatings-technologies/nottingham-launches-ai-driven-robotic-lab-for-coating-discovery/",
-        "publishedAt": "Thu, 05 Nov 2026 08:25:56 +0000"
+        "publishedAt": "2026-11-05"
     },
     {
         "source": "European Coatings",
         "title": "Uzin Utz 推出工業黏合劑解決方案新業務部門",
         "summary": "Uzin Utz 已成立專門的業務部門，致力於為運輸、造船和模組化建築提供工業黏合劑和系統解決方案。",
         "url": "https://www.european-coatings.com/news/markets-companies/uzin-utz-launches-new-business-unit-for-industrial-adhesive-solutions/",
-        "publishedAt": "Thu, 05 Nov 2026 07:15:51 +0000"
+        "publishedAt": "2026-11-05"
     },
     {
         "source": "European Coatings",
         "title": "贏創擴建埃森矽油生產平台",
         "summary": "贏創已在其位於德國北萊茵-威斯特法倫州埃森戈爾德施密特大街的工廠建成一座新的生產廠和儲罐設施。這項5,200萬歐元的投資擴大了用於塗料、黏合劑、聚氨酯泡棉和化妝品的有機改質矽油的產能。",
         "url": "https://www.european-coatings.com/news/markets-companies/evonik-expands-silicone-platform-in-essen/",
-        "publishedAt": "Thu, 05 Nov 2026 06:51:42 +0000"
+        "publishedAt": "2026-11-05"
     },
     {
         "source": "塗料報知",
-        "title": "木繪研究小組研討會 - 網路繪畫新聞",
-        "summary": "木繪研究小組研討會 - 網路繪畫新聞",
-        "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9DeGJjYXkycVNDeTRMR1BGWll0ZFZEYVpuY1lYTE5DMFVGSGdoYzBpR0p4LWFGc0JORVNWSngyR21WVW5HbGJuQkoxVkFBZFpqWVMxUlp1YU1iYVE?oc=5",
-        "publishedAt": "Wed, 27 Jun 2018 08:36:22 GMT"
+        "title": "油漆塗料行業最受歡迎的11位人物，以及他們的朋友也陸續加入——WEB油漆新聞",
+        "summary": "油漆塗料行業最受歡迎的11位人物，以及他們的朋友也陸續加入 WEB油漆新聞",
+        "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1iX0FUUXowX0hjQkRpN3lIQWxEWFoxU1hndVhHN3pQbnIxcWFtT1VPQ2tEUUtWTl9jbnVNdVpxbnk2S2hja3h2UjZZUWhOUUtsS2pDVmRWdlFBRlNsMHpv?oc=5",
+        "publishedAt": "2026-10-24"
     },
     {
         "source": "塗料報知",
-        "title": "WEB Paint News | 油漆、塗料和塗裝行業平台 - WEB Paint News",
-        "summary": "WEB Paint News | 油漆、塗料和塗料行業平台 &nbsp;&nbsp;WEB Paint News",
-        "url": "https://news.google.com/rss/articles/CBMiP0FVX3lxTE84ZEcwQUMySlp4RE9TckNkZ2Z6ZjlSOTdNT3lzZGFPT2ROei1FU3ZRd2hnRzJHVzRtOWNJTU9Ldw?oc=5",
-        "publishedAt": "Wed, 27 Jun 2018 06:50:31 GMT"
+        "title": "《佩塔》四格漫畫重印版 - 7個精選故事 - 《油漆新聞》報紙80週年紀念項目 - 網頁版《油漆新聞》",
+        "summary": "《佩塔》四格漫畫重印版 - 7個精選故事 - 《油漆新聞》報紙80週年紀念項目 &nbsp;&nbsp;網頁版《油漆新聞》",
+        "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1leTdYUEZLSGJGY3dlNFZ6OVFNYmZPd21fcDgtY3ZJVTlHTEZ5c2RPa0RlVUZnaXhrVkhqLV9uZHJVN0pDRlJHalExOTRUYUU?oc=5",
+        "publishedAt": "2026-10-24"
     },
     {
         "source": "塗料報知",
-        "title": "油漆廠商接連調整價格 - 網路油漆新聞",
-        "summary": "油漆廠商接連調整價格 網路油漆新聞",
-        "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE04cWo5bTFNMmROajg2eDlIM204aENlX1VoSmIxTjlSdFJxWFZ1eDN0M0ZQTWczZjg5RUllbF93ZERPMTdMNG9hdUdSVlZOekdTT3ZGa0NnOUtkWEdXWFk2dF9n?oc=5",
-        "publishedAt": "Wed, 25 May 2022 13:50:32 GMT"
+        "title": "報紙廣告（Gyo-chara PR 計畫）202610ol - WEB Paint News",
+        "summary": "報紙廣告（Gyo-chara PR 計畫）202610ol WEB Paint News",
+        "url": "https://news.google.com/rss/articles/CBMipAJBVV95cUxNSHdPMlRsQVB4TlpObnE1R1FKWHJPNE16QXJKRUwyaUF6VHlNUGpqTzBrWjdyT0ZNenM1Wm1sQmpWc3pkS1ZMbEVpc2dnbl9fNWRLdGEwcUxMSWxjVWlGQVY4UmJBRHJxZjEyaE8wQlpwY29XMm4xU0x5NFVvWDFBZkg1elVXMFZEVnpuVG11Q1I0MmtTdEJ3eVNYbW9ZTWs1NTZJb1pzVS1mMV9ZVVV3MXFiZGpGTkg1U3dFcV9LUjc4aVJBM29wUUtxaGlEYlVZMEgxWUltbWpWNFhUTzJ2bl9zcnlXd29peU8zUDRFbEs3a2FtaldlS1dTbUdtOUlUSFZZeDVJSEhubTlDYUEyeGNaZC0zQmV5dENvOVZyUnZOY3Bt?oc=5",
+        "publishedAt": "2026-10-28"
     },
     {
         "source": "塗料報知",
-        "title": "市面上還有更多抗菌和抗病毒產品 - WEB Paint News",
-        "summary": "市面上還有更多抗菌和抗病毒產品 WEB Paint News",
-        "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1uYlkxVXU5UC1QRjc0S285dlNLNHdCRGFNeTcwcnVwR3JodGRNY1BEaTdoeFBWSTJLWVJNMFpOMmtlTzMtQkZaQW8yQjROSUV6?oc=5",
-        "publishedAt": "Mon, 18 May 2020 04:03:37 GMT"
+        "title": "塗料、油漆及油漆產業平台 - WEB Paint News",
+        "summary": "塗料、油漆及油漆產業平台 WEB Paint News",
+        "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOd3F3TmFTYzJmb0NoUEJkOHp1cHNQUF9DWmlFOTh6UGh6d29uOHdFeUlmVThiaEpZVEdtdC1SVUpIeTJkWlhuaUNyVkdxdjNkQlVMbjFTREtKeERzMW9LWVA0d1BYVF9IdkdYQ2NZWlN4OGdYeDJubEN3VVY4N1NrWEhvTi1JQjJOZlE?oc=5",
+        "publishedAt": "2026-11-02"
     },
     {
         "source": "塗料報知",
-        "title": "公司簡介 - WEB Paint News",
-        "summary": "公司簡介 &nbsp;&nbsp;WEB Paint News",
-        "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE4yc0JEZnlPNW1nZ3JSVmw5eWxUSmtSRnlwQWxTOUctNUN0Vk5laExqamN4QS1LeERybGxPWGhJbHNITDU3U09yQmV3?oc=5",
-        "publishedAt": "Wed, 27 Jun 2018 06:50:54 GMT"
+        "title": "Yuka Engineering 推廣單元式設備優勢 [2026 CJT 報告] - WEB Paint News",
+        "summary": "Yuka Engineering 推廣單元式設備優勢 [2026 CJT 報告] WEB Paint News",
+        "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1ZZHFtRzQ3UDlKSWdDLTZjeFMtYXZNbUxyRldlRXpiMktfYjBYWkNtdS1vQ2NyclNWUWhyYWFySXAwTEtMVEhDNF9mNUgzcGhFOC11dGpOSQ?oc=5",
+        "publishedAt": "2026-09-30"
     },
     {
         "source": "Coating Media",
         "title": "建築領域推出兩款新產品 - 塗料與塗層雜誌 CoatingMedia Online",
         "summary": "建築領域推出兩款新產品 &nbsp;&nbsp; 塗料與塗層雜誌 CoatingMedia Online",
         "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE15dFBkX1Rzb3VrVmdCN256SlV2empzRjB2QmRvVGlfV2tla2JzeGNWaW5KNW1XbG1tSnIwWkRRN2pKN1VVWkU1TUxIZ2x1LU13cHpOMmtiSW41amM?oc=5",
-        "publishedAt": "Wed, 30 Sep 2026 07:00:00 GMT"
+        "publishedAt": "2026-09-30"
     },
     {
         "source": "Coating Media",
-        "title": "讓建築業成為災害預防和緩解的關鍵參與者 - 塗料與塗層雜誌 CoatingMedia Online",
-        "summary": "讓建築業成為災害預防和緩解的關鍵參與者 塗料與塗層雜誌 CoatingMedia Online",
-        "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTFAwZXRDR2FJWG0wWGNPYXJyZ3dZVURKdTRRYlM0Q3BsRGVma1BYRDhWblpwLUhIeWcwczlnMnl5RnN0UWVIcUx5SXFmR3F3Y01fcXphckwtSzFMQ05kLUZqbmQ3MmRRRi12T3kzUQ?oc=5",
-        "publishedAt": "Mon, 11 May 2026 07:00:00 GMT"
+        "title": "出版品 | 塗料白皮書 - coatingmedia.com",
+        "summary": "出版品 | 塗料白皮書 &nbsp;&nbsp;coatingmedia.com",
+        "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1OeW95QUJRUHBKWGpLRF9GUll6YjdqYXQ2eTNkX0wtVTZvTTJ3em43OURVNzdxR3VabFk1MG9PQkZ4eTJJSGZqWTJzQWNPX1ZBa3JEQzhXU0plYmtiTTcxb0JRcnJsS09VZXlleg?oc=5",
+        "publishedAt": "2026-10-31"
     },
     {
         "source": "Coating Media",
-        "title": "企業情報 - coatingmedia.com",
-        "summary": "企業情報&nbsp;&nbsp;coatingmedia.com",
-        "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE5wYVctMzNscnVwbkN0eV91Q256OFVxVmVxY1ZKaTlISG9FMWh1bUhZOTEyc09QY05nU0M0bmdFOTBkenNpM3lNSzNYYw?oc=5",
-        "publishedAt": "Sun, 07 May 2017 15:04:42 GMT"
-    },
-    {
-        "source": "Coating Media",
-        "title": "透過社群贏得寵物主人的信任 - 塗料與油漆雜誌 CoatingMedia Online",
-        "summary": "透過社群贏得寵物主人的信任 塗料與油漆雜誌 CoatingMedia Online",
-        "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9ud0R6RkMyTFRxN0pfWW82SGNzRDgxQW9XWnRkYlAzazV0Y0ZkU0R2Q3V6aVJTc2JnMFV6MzgxWTl5X09tajk2OFJ0cEtxN3FiQUhPeTNDQ0Y1TU5IRndOUHZYUndXVWp5M1Focw?oc=5",
-        "publishedAt": "Thu, 19 Mar 2026 07:00:00 GMT"
-    },
-    {
-        "source": "Coating Media",
-        "title": "漿料分散網系列 - coatingmedia.com",
-        "summary": "漿料分散網系列 &nbsp;&nbsp;coatingmedia.com",
-        "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE1KSWNkeWxLSl9iQV9XVTVLUVdRbzBpTjhBR1NGYjZXQ2lJUkVyU1RkWm41bHAwVlhOOGlxcEtfWXRfS2cyUHRwNnN2dnNZWW11Z1ZRVS1ka1hXSkhpQ2hHUlBGNXJzTmNqVW9IRnNHNVFPb0hkaEdoQUtB?oc=5",
-        "publishedAt": "Tue, 10 Sep 2013 07:00:00 GMT"
+        "title": "提供塗裝實用資訊的「Marutee App」已上線 | 建築與基礎設施 - 塗料與塗層雜誌 CoatingMedia Online",
+        "summary": "提供塗裝實用資訊的「Marutee App」已上線 | 建築與基礎設施 塗料與塗層雜誌 CoatingMedia Online",
+        "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5qT0NsdmEzUUxSZ1dhd09lRndkNklPcTJjVTRCTTlfUldsa1BVandFdUFIRk1ObWhPbHl0RGJ0YkRXWEVEZXUyc2ktU3dQZVBnZHFrMlF2YzQ5cG1lTDJYTXJ3?oc=5",
+        "publishedAt": "2026-09-09"
     },
     {
         "source": "日本塗料控股",
-        "title": "立邦塗料控股有限公司推出可實現自動駕駛的靶線塗料",
-        "summary": "立邦塗料控股有限公司推出可實現自動駕駛的靶線塗料",
-        "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNM2VLN2Z3WGVOX0YzQUJNYzhZblVmV1JOTTFqZGNTQzM1d0NrdjFXTlpqekM2MDRlbTlVUFlJSFBrclUxa3U3ZUZLYkptUnFzUFpiN2Fwek9OQXM1UzNPWHdKcXZzSFcyT1UxT2YwNWFkSnQzX09rX016aE1EaGZVSGJyLW93SWpQ?oc=5",
-        "publishedAt": "Mon, 26 Dec 2022 08:00:00 GMT"
-    },
-    {
-        "source": "日本塗料控股",
-        "title": "多元化與包容 - 立邦塗料控股",
-        "summary": "多元化與包容性 立邦塗料控股",
-        "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE94bGkxQmxSdF9MRTl3OE1uMGk2T0oxdlE4Q1pkMWxDb2VXQVNpS1REOTgyVHVSWnYwZGg5YlZTU25ET1VsekZJb0xvS05ZM1ExaHlaTmktUXFQamV1aU5BUTcyU2piX01JTGduS2UxU2c5aDhpZmc4aQ?oc=5",
-        "publishedAt": "Tue, 20 Sep 2022 07:44:04 GMT"
-    },
-    {
-        "source": "日本塗料控股",
-        "title": "電子公告 - 立邦塗料控股",
-        "summary": "電子公告 立邦塗料控股",
-        "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9SeUlHTXhleWJFX2ptWkxoaW1NVlZralhfZzROdjBXWWswaUNNclRwbmgyQ0RJVEZBY3RBVkxqa08zNDhTYzIyNmtKWVdtcGUwLXBtRVBmTEg?oc=5",
-        "publishedAt": "Wed, 02 Aug 2017 09:37:00 GMT"
-    },
-    {
-        "source": "日本塗料控股",
-        "title": "公司資訊 - 立邦塗料控股",
-        "summary": "公司資訊 立邦塗料控股",
-        "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1LM0NjQ004bkh2NWJWQXhla0tITjdtMUJYQXhBdUJHcmI1dGFXZ1NsMHFJQzZ1M2ZjQS0yd3RsV3dMdDBHQk1oVVFQOUxTSExfbjNGTTI0bDU?oc=5",
-        "publishedAt": "Wed, 02 Aug 2017 09:37:01 GMT"
-    },
-    {
-        "source": "日本塗料控股",
-        "title": "永續發展 - 立邦塗料控股",
-        "summary": "永續發展 立邦塗料控股",
-        "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE83dkpfTjlGMEY1aWV3NkdSeXl0LWxrYUFFSFRVSE1ZYTBhblV2M2ZlQS1ZLUd1LUVjVVlwLTZia2xGRWltU2VlMUl6UDFKUkZESVY2T3phRGVTcks0NzdmOXJB?oc=5",
-        "publishedAt": "Wed, 16 Dec 2020 08:51:24 GMT"
-    },
-    {
-        "source": "SpecialChem",
-        "title": "耐候性和抗紫外線性能：探索塗料的韌性 - SpecialChem",
-        "summary": "耐候性和抗紫外線性能：探索塗料的韌性 SpecialChem",
-        "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFB5Ql82QVhnS2NNUGQtRlY3TmxJVUt1am40Ny1mSXZfZmgwN3MyYUdXNHFjNVdURnJ6UGJKR2p4QjBkRXluNWlPaWpRNDM0SDhkQ1JHNkhLZnlhSWRZemJoVDc2cGNBaWQ1REtsV3hPVFlZQQ?oc=5",
-        "publishedAt": "Mon, 14 Jul 2025 07:00:00 GMT"
-    },
-    {
-        "source": "SpecialChem",
-        "title": "塗料填料選擇 - SpecialChem",
-        "summary": "塗料填料選擇 SpecialChem",
-        "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxONy1Pd2Z4VE1KNEpsUzI0bHJ2THZSdmY1TlRTU2tMeG16MHo0YVJOM0VVN2RHTGhJbnBYSjNjRG90LWRjV0pfZlVLLXAxdEVaWlh4d0x3VnRSU2pzNlYycnBCXzIybjFfQ0xUWUNOakpmWGdFSGJpbS1KZ3cyeUcteFRRM2xnM0U?oc=5",
-        "publishedAt": "Tue, 08 Jul 2025 07:00:00 GMT"
-    },
-    {
-        "source": "SpecialChem",
-        "title": "塗料消光效果：主要類型及評估方法 - 特種化學",
-        "summary": "塗料消光效果：主要類型及評估方法 特種化學",
-        "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFAzUEd4bDAwbWx1ZWRXb2FDcGxWMkw1R2FqTjBwT3dlYkxnRjBIZVZOVXNqU0F2eVo2Rmg4dWdfNTFJRkl6TjVtWEhISVZkZEduaWRwcUNMUmU0VTFQalAw?oc=5",
-        "publishedAt": "Mon, 14 Jul 2025 07:00:00 GMT"
-    },
-    {
-        "source": "SpecialChem",
-        "title": "塗層玻璃化轉變溫度：基本概念 - 特種化學",
-        "summary": "塗層玻璃化轉變溫度：基本概念&nbsp;&nbsp;特種化學",
-        "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1FaWo0d3ZTWVpOYmxtcjVUNHpwUEhUUldjZ3RieVF4ZUFTM3N3MTVWMDkxNk90b3JSNnBKQVJiVG1FWXM0dXFyR2oyUERDZFhQNE5NaXVGSndITEM3MFRBWmJrQld6WWNaYUtSZHNCSFJ1S05CTm16UHhxRQ?oc=5",
-        "publishedAt": "Wed, 08 Oct 2025 07:00:00 GMT"
-    },
-    {
-        "source": "SpecialChem",
-        "title": "薄膜硬度：提升薄層塗料的耐久性和防護性 - SpecialChem",
-        "summary": "薄膜硬度：提升薄層塗料的耐久性和防護性 SpecialChem",
-        "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE81QXVyeUpqU3VpazRzQ1dOVk9rM2Nmcld3UFAzY3o0TXhMT1JVOUlWZl9xWUN5YktiWWJHX3luRm96NmhCN3F1M1RRWWJXaFd6TGR6NTZ2NWxxSTcyeUIzVVpBYWlaUTQ?oc=5",
-        "publishedAt": "Tue, 15 Jul 2025 07:00:00 GMT"
+        "title": "立邦塗料控股收購阿克蘇諾貝爾東南亞建築塗料業務",
+        "summary": "立邦塗料控股收購阿克蘇諾貝爾東南亞建築塗料業務",
+        "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1KTFRsN1BDLVZ2MnVuLXhGeEJuWVlHZUVWemoxN0tSa05GRFRaY2lxSTM0UUJ3MW9jNFd3RWwxV1gtUXBWOEYtTXUzMmZKc3RNX205SHowZ1RuS05BTnR2dVlQVTFGSVhtX3cxMEM1ODNLYkZZ?oc=5",
+        "publishedAt": "2026-10-05"
     }
 ]
