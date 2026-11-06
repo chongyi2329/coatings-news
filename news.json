@@ -22,17 +22,17 @@
     },
     {
         "source": "Google News (Coatings)",
-        "title": "PPG在索堡接待丹麥教育部長，探討如何吸引年輕人才加入塗料行業 - PPG工業公司",
-        "summary": "PPG在索堡接待丹麥教育部長，探討如何吸引年輕人才加入塗料行業&nbsp;&nbsp;PPG工業公司",
-        "url": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxNTXRJdlk4eDFjRXBTaVo1endVRVNNLTc0T09tdTFLal9udS1ucG1OajhFXzNrdzktLXozZ3pxczgxYjJaRGRsVWxjY29QQTlqOXBWZ3BZdmIyWmN4SU1kM3VIM1VTbTFVcDM3d0hMdVBXWGRBWTNScnBWejRvT2FrSTNtQW4ydlcxM1R0NDl5VzMyVnRPZXo3aS1acDkxdnhrM0QwWVp1aG1xcXFiUzVBSTVzVGFSM3pDZ0xCOC1VTHd0d3hXY1ZULUdrcGxfdWlfbjdsZnZ4dG1FVjlDbW05LV9iTkN5dDVVUHF5a2RtQU56dnZLTXk5emN3?oc=5",
-        "publishedAt": "Thu, 29 Jan 2026 08:00:00 GMT"
-    },
-    {
-        "source": "Google News (Coatings)",
         "title": "德雷塞爾大學化學工程系學生在塗料行業獲得實務經驗",
         "summary": "德雷塞爾大學化學工程系學生在塗料行業獲得實務經驗",
         "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNQmdkNW1UbTNyNGV6TTdUTHp4QUtsOGpNbkRNcEVrcVhUQmp0ZUY2UXQ5ak1rRVUwTmkzUHAwVnRfbnU5TjR4VVdRNEN4eG9BbTROdW84bU53UXg5MWhaeWlJdEpzcDZ0VGR4NzVOSkhsWDhPQ3FtWC05V0Y1bG41MTVVcWdYVE9UWU82eHJuRHo2bzBzWVdjcw?oc=5",
         "publishedAt": "Thu, 04 Dec 2025 08:00:00 GMT"
+    },
+    {
+        "source": "Google News (Coatings)",
+        "title": "阿克蘇諾貝爾與艾仕得的交易重振塗料行業 - 《全球金融》雜誌",
+        "summary": "阿克蘇諾貝爾與艾仕得的交易重振塗料行業&nbsp;&nbsp;《全球金融》雜誌",
+        "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNeGlnMjFPall3VTdJS1RaN2ltWFJaTjJBMGZWYWdJT2RKMmlGMmdRQmlxSXEwVVNMZS1wYWZHbUxfSjlfU093Ym5pOEpLTlNrQUMxZkRHUkk2TmF4bmRHeHhFMlczeTJXX1ZoRGFVTVNtQnQ0dGxJUkhFTUoyZEQ1OEpLUkVZUDBYQzVSblVwYmU3TTBsSGtVYlJHVDNtbGFueTVR?oc=5",
+        "publishedAt": "Mon, 08 Dec 2025 08:00:00 GMT"
     },
     {
         "source": "Coatings World",
@@ -106,6 +106,20 @@
     },
     {
         "source": "European Coatings",
+        "title": "IMCD任命Martin Wolf為中國區總經理",
+        "summary": "IMCD已任命Martin Wolf為中國區總經理，自2026年10月起生效。 Wolf在化學產業擁有超過20年的經驗，他將致力於加強與供應商和客戶的關係，並推動公司在中國市場的業務成長。",
+        "url": "https://www.european-coatings.com/news/people-careers/imcd-appoints-martin-wolf-as-managing-director-for-china-operations/",
+        "publishedAt": "Thu, 05 Nov 2026 13:38:33 +0000"
+    },
+    {
+        "source": "European Coatings",
+        "title": "加速測試改變薄型聚烯烴食品接觸材料",
+        "summary": "對於食品接觸材料（FCM），例如印刷食品包裝，化學物質向食品中的遷移至關重要：包裝或油墨層中的物質可能會以微量轉移到食品中。作者：EuPIA 的 Christof Walter 博士；Sun Chemical 的 Mike Simoni；以及 Hubergroup 的 Werner Oechsle。",
+        "url": "https://www.european-coatings.com/news/legislation/accelerated-tests-alter-thin-polyolefin-fcm/",
+        "publishedAt": "Thu, 05 Nov 2026 11:00:03 +0000"
+    },
+    {
+        "source": "European Coatings",
         "title": "諾丁漢大學推出人工智慧驅動的塗層研發機器人實驗室",
         "summary": "諾丁漢大學的研究人員開發了一套自動駕駛實驗室，該實驗室結合了人工智慧和機器人技術，可自動完成耐熱塗層的研發。該系統將液體點膠、機器人操作和高溫爐處理整合到一個工作流程中，支援用於航空航太和能源領域的先進隔熱塗層的開發。",
         "url": "https://www.european-coatings.com/news/coatings-technologies/nottingham-launches-ai-driven-robotic-lab-for-coating-discovery/",
@@ -124,19 +138,5 @@
         "summary": "贏創已在其位於德國北萊茵-威斯特法倫州埃森戈爾德施密特大街的工廠建成一座新的生產廠和儲罐設施。這項5,200萬歐元的投資擴大了用於塗料、黏合劑、聚氨酯泡棉和化妝品的有機改質矽油的產能。",
         "url": "https://www.european-coatings.com/news/markets-companies/evonik-expands-silicone-platform-in-essen/",
         "publishedAt": "Thu, 05 Nov 2026 06:51:42 +0000"
-    },
-    {
-        "source": "European Coatings",
-        "title": "亞洲塗料在達赫傑工廠啟動VAE乳液生產",
-        "summary": "亞洲塗料已在其位於印度古吉拉特邦達赫傑的生產基地開始商業化生產醋酸乙烯酯乙烯乳液。新廠年產能為15萬噸，是該公司後向一體化計畫的一部分。",
-        "url": "https://www.european-coatings.com/news/markets-companies/asian-paints-launches-vae-emulsion-production-at-dahej-facility/",
-        "publishedAt": "Thu, 05 Nov 2026 06:45:34 +0000"
-    },
-    {
-        "source": "European Coatings",
-        "title": "贏創公佈強勁的2026年第三季業績並調高預期",
-        "summary": "贏創公佈了強勁的第三季業績，調整後EBITDA年增40%至6.29億歐元。這家特種化學品集團目前預計，其2026年全年業績將達到先前20億至22億歐元預期範圍的上半部。塗料和油漆添加劑推動了客製化解決方案業務板塊的積極需求成長。",
-        "url": "https://www.european-coatings.com/news/markets-companies/evonik-posts-strong-q3-2026-results-and-raises-outlook/",
-        "publishedAt": "Thu, 05 Nov 2026 06:38:38 +0000"
     }
 ]
