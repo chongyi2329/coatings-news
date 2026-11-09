@@ -12,11 +12,11 @@ scraper = cloudscraper.create_scraper(browser={'browser': 'chrome', 'platform': 
 # Google Apps Script 翻譯 API 網址
 GAS_API_URL = "https://script.google.com/macros/s/AKfycbxcjyqA9fKv65j53MGHgi-o28Z--uGuL4EMl6CmPTUb8fIpkEa3AgdxgaNDyxu3TA/exec"
 
-# 替換 Coatings World 為 Google 代理版本
+# 移除 when:30d 限制，確保能抓滿最新 5 篇
 RSS_FEEDS = [
-    {"source": "Google News (Coatings)", "url": 'https://news.google.com/rss/search?q="coatings+industry"+OR+"paint+industry"+when:30d&hl=en-US&gl=US&ceid=US:en'},
-    {"source": "Coatings World", "url": "https://news.google.com/rss/search?q=site:coatingsworld.com+when:30d&hl=en-US&gl=US&ceid=US:en"},
-    {"source": "PCI Magazine", "url": "https://news.google.com/rss/search?q=site:pcimag.com+when:30d&hl=en-US&gl=US&ceid=US:en"},
+    {"source": "Google News (Coatings)", "url": 'https://news.google.com/rss/search?q="coatings+industry"+OR+"paint+industry"&hl=en-US&gl=US&ceid=US:en'},
+    {"source": "Coatings World", "url": "https://news.google.com/rss/search?q=site:coatingsworld.com&hl=en-US&gl=US&ceid=US:en"},
+    {"source": "PCI Magazine", "url": "https://news.google.com/rss/search?q=site:pcimag.com&hl=en-US&gl=US&ceid=US:en"},
     {"source": "European Coatings", "url": "https://www.european-coatings.com/rss"}
 ]
 
@@ -66,12 +66,6 @@ def main():
                 parsed_date = entry.get('published_parsed')
                 if parsed_date:
                     dt = datetime.fromtimestamp(time.mktime(parsed_date))
-                    
-                    # 【嚴格海關審查】檢查是否超過 30 天
-                    if now - dt > timedelta(days=30):
-                        print(f"⚠️ 跳過過期文章: {entry.get('title', '')}")
-                        continue
-                        
                     pub_date_str = dt.strftime("%Y-%m-%d")
                 else:
                     # 如果沒有時間標籤，視為當天
